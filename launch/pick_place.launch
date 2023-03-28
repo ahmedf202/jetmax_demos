@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+<rosparam file="$(find jetmax_demos)/config/camera_cal.yaml" command="load"/>
+<rosparam file="$(find jetmax_demos)/config/color_config.yaml" command="load"/>
+<node pkg="jetmax_demos" type="pick_place.py" name="pick_place" output="screen" />
+<!-- video visualisation -->
+<node pkg="image_view" type="image_view" name="image_view_pick_palce" output="screen">
+<remap from="image" to="/pick_place/image_result" />
+</node>
+</launch>

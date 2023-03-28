@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+<rosparam file="$(find jetmax_demos)/config/color_config.yaml" command="load"/>
+<!-- object_tracking-->
+<node pkg="jetmax_demos" type="object_tracking.py" name="object_tracking" output="screen" />
+<!-- video visualisation -->
+<node pkg="image_view" type="image_view" name="image_view_object_tracking" output="screen">
+<remap from="image" to="/object_tracking/image_result" />
+</node>
+</launch>

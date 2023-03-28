@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+
+<launch>
+<node pkg="jetmax_demos" type="servo_control.py" name="servo_control" output="screen" />
+</launch>
